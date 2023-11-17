@@ -48,7 +48,6 @@ public final class Food extends Product {
           ? super.getDiscount() : BigDecimal.ZERO;
     }
 
-    @Override
     public Product applyRating(Rating newRating) {
         return new Food(getId(), getName(), getPrice(), newRating, bestBefore);
     }

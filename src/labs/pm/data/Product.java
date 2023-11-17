@@ -32,7 +32,7 @@ import java.util.Objects;
  * @version 4.0
  * @author Хаус
  */
-public abstract class Product {
+public abstract class Product implements Rateable<Product> {
 /** 
  * A constant that defines a  
  * {@link java.math.BigDecimal BigDecimal} value of the discount rate 
@@ -74,18 +74,12 @@ public abstract class Product {
     public BigDecimal getDiscount() {
         return price.multiply(DISCOUNT_RATE).setScale(2,HALF_UP);
     }
-
+    
+    @Override
     public Rating getRating() {
         return rating;
     }
     
-    public abstract Product applyRating (Rating newRating);
-    
-    /** 
-    * Assumes that the best before date is today 
-    * 
-    * @return the current date 
-    */ 
     public LocalDate getBestBefore() {
         return LocalDate.now();
     }
