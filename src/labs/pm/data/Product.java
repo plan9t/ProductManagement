@@ -102,13 +102,15 @@ public abstract class Product implements Rateable<Product> {
 
     @Override
     public boolean equals(Object obj) { 
-         if (this==obj) { return true; } 
-         if (obj instanceof Product) {
-           final Product other = (Product)obj;                                                                                                                     
-           return this.id==other.id && Objects.equals(this.name, other.name); 
-         } 
-         return false; 
-       }
+        if (this == obj) { 
+            return true; 
+        } 
+    if (obj instanceof Product) { 
+        final Product other = (Product) obj; 
+        return this.id == other.id; 
+    } 
+    return false; 
+ }
     
     
     
