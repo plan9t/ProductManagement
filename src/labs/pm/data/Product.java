@@ -16,10 +16,10 @@
  */
 package labs.pm.data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import static java.math.RoundingMode.HALF_UP;
 import java.time.LocalDate;
-import java.util.Objects;
 
 /** 
  * {@code Product} class represents properties and behaviours of  
@@ -32,7 +32,7 @@ import java.util.Objects;
  * @version 4.0
  * @author Хаус
  */
-public abstract class Product implements Rateable<Product> {
+public abstract class Product implements Rateable<Product>, Serializable {
 /** 
  * A constant that defines a  
  * {@link java.math.BigDecimal BigDecimal} value of the discount rate 
